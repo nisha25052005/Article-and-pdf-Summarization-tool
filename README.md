@@ -36,7 +36,7 @@ The app leverages cutting-edge **NLP models** from Hugging Face, uses **FAISS** 
 
 ---
 
-## 🛠️ Setup Instructions
+##  Setup Instructions
 
 **1. Clone the repo & install dependencies:**
 
@@ -60,7 +60,7 @@ python -m spacy download en_core_web_md
 
 ---
 
-## 💻 Run the App
+## Run the App
 
 ```bash
 streamlit run workingcombine.py
@@ -68,7 +68,7 @@ streamlit run workingcombine.py
 
 ---
 
-## 🧠 How to Use
+## How to Use
 
 * From the sidebar:
 
