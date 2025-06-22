@@ -1,70 +1,103 @@
 
+# 📝 Article & PDF Summarization Tool
 
-# **# Article & Summarization Tool 📝**
+This project is a simple yet powerful web application built using **Streamlit** that provides two core features:
 
-This project is a web application built using Streamlit that offers two main functionalities:
-1. **Article Research Tool**: Allows users to analyze and summarize content from URLs.
-2. **PDF Summarization Tool**: Enables users to upload a PDF, extract its text, and generate a summary.
+1. **Article Research Tool** – Analyze and summarize content from URLs.
+2. **PDF Summarization Tool** – Upload a PDF, extract its text, and generate concise summaries.
 
-The application uses several NLP models and frameworks, including Hugging Face's transformers, FAISS for vector storage, and BERT for extractive summarization.
+The app leverages cutting-edge **NLP models** from Hugging Face, uses **FAISS** for vector search, and **BERT** for extractive summarization.
 
-## **## Features**
+---
 
-- **Article Research Tool**: Input URLs, process articles, and answer queries or summarize the text using pre-trained NLP models.
-- **PDF Summarization Tool**: Extracts text from uploaded PDF files and generates a summary.
+##  Features
 
-### **## Requirements**
+- **Article Research Tool**:
+  - Input up to 3 URLs.
+  - Extracts article content.
+  - Summarizes or answers questions using pre-trained language models.
+
+- **PDF Summarization Tool**:
+  - Upload any PDF file.
+  - Extracts the text and summarizes it with ease.
+
+---
+
+## Requirements
 
 - Python 3.8+
 - Streamlit
 - Transformers (Hugging Face)
 - FAISS
 - PyPDF2
-- Summarizer (BERT Extractive Summarizer)
-- Spacy
+- BERT Extractive Summarizer
+- SpaCy
 - LangChain
 
-**Install Dependencies: Create a virtual environment (optional but recommended) and install the required Python packages.**
+---
 
-```python
+## 🛠️ Setup Instructions
+
+**1. Clone the repo & install dependencies:**
+
+```bash
+git clone https://github.com/nisha25052005/Article-and-pdf-Summarization-tool.git
+cd Article-and-pdf-Summarization-tool
+
+# Create and activate virtual environment (optional)
 python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+venv\Scripts\activate  # On Linux/Mac: source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
-```
-**Download Spacy Model:**
-```python
+````
+
+**2. Download SpaCy Model:**
+
+```bash
 python -m spacy download en_core_web_md
 ```
 
-### **Running the Application
-Start the Streamlit App:**
+---
 
-streamlit run app.py
+## 💻 Run the App
 
+```bash
+streamlit run workingcombine.py
+```
 
-### **Using the Tool:**
+---
 
-1.  Select between Article Research Tool and PDF Summarization Tool from the sidebar.
-2.  For the Article Research Tool, input up to three URLs, and click Process URLs to analyze the content.
-3.  For the PDF Summarization Tool, upload a PDF file, and click Summarize to extract and summarize its text.
+## 🧠 How to Use
 
-**Folder Structure**
-1. workingcombine.py: The main application script.
-2. requirements.txt: Contains all Python dependencies.
-3. README.md: This readme file.
+* From the sidebar:
 
-#### **Example Usage**
-- Article Research Tool
-- Enter up to 3 article URLs in the sidebar.
-- click Process URLs.
-- Type a question or "summarize" followed by your query in the input box to get answers or summaries.
+  * Choose between **Article Research Tool** or **PDF Summarization Tool**.
+* For Article Research:
 
-**PDF Summarization Tool**
-- Upload a PDF file.
-- Click Summarize to view the summarized text.
+  * Paste 1–3 article URLs.
+  * Click **"Process URLs"**.
+  * Ask a question or type "summarize" to get an overview.
+* For PDF Summarization:
 
-##### **Notes**
-1. Ensure that faiss_store_pretrained.pkl (the saved FAISS index) is available or the app will create one upon 2. processing URLs.
-2. Adjust the model as needed in the code (default is facebook/bart-large-cnn).
+  * Upload a PDF file.
+  * Click **"Summarize"** to generate output.
 
+---
+
+## 📁 Project Structure
+
+```bash
+├── README.md                  # Project overview
+├── requirements.txt           # List of dependencies
+└── workingcombine.py          # Main Streamlit app
+```
+
+---
+
+## 📝 Notes
+
+* Ensure you have a FAISS index file (e.g., `faiss_store_pretrained.pkl`) if you're loading a pretrained vector store.
+* If the FAISS file doesn't exist, the app will auto-create one after processing articles.
+* You can tweak the summarization model (e.g., switch from `facebook/bart-large-cnn` to any Hugging Face model).
 
